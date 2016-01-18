@@ -1,0 +1,24 @@
+@font-face{
+	font-family: "Emblema One";
+	src: url("http://wickedlysmart.com/hfhtmlcss/chapter8/journal/EmblemaOne-Regular.woff"),
+	     url("http://wickedlysmart.com/hfhtmlcss/chapter8/journal/EmblemaOne-Regular.ttf"); 
+}
+
+h1{font-family: "Emblema One";
+   font-size: 60px;
+   text-align: center;
+}
+
+h2{font-family: "Emblema One";
+   font-size: 30px;
+   color: #65C8D0;
+   font-weight: lighter;
+   text-align: center;
+}
+
+h3{font-family: "Arial";
+   font-size: 20px;
+   color: #BA9BC9;
+   font-weight: lighter;
+   font-style: italic;
+}
