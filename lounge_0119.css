@@ -1,0 +1,50 @@
+p{
+	box-sizing:border-box;
+	width: 800px;
+	text-align: center;
+	margin: 30px auto;
+	background-color: aquamarine;
+	padding: 30px;
+	border: solid 3px;
+	border-color: #2A8DE0;
+	line-height: 30px;
+}
+
+
+.p2{
+	box-sizing:border-box;
+	background-color: #F98181;
+	color: #ffffff;
+	border-style: dashed;
+	border-color:#E12E34;
+	border-radius: 15px;
+	margin: 30px auto;
+	padding: 30px;
+}
+
+.grey{
+	box-sizing:border-box;
+	text-align:left;
+	background-color: #D8D3D3;
+	color: #575757;
+	border: solid 4px #ffffff;
+	border-style: dotted;
+	background-image: url(image/homepage/table_ori.png);
+	background-repeat: no-repeat;
+	background-position: center left 20px;
+	padding-left: 220px;
+
+}
+
+
+.p3{
+	box-sizing:border-box;
+	background-color: #5CD064;
+	color: #ffffff;
+	border-style: outset;
+	border-color:#ffffff;
+	border-bottom-right-radius: 40px;
+	border-top-left-radius: 40px;
+	margin: 30px auto;
+	padding: 30px;
+}
