@@ -1,0 +1,65 @@
+.container {
+    margin: auto;
+    padding: 20px;
+    width: 600px;
+    line-height: 150%;
+    margin-top: 60px;
+    background-color: #ffffff;
+}
+
+.h1{
+	background-color: #3A8EF5;
+	color: #ffffff;
+	height: 35px;
+	top: 20px;
+	padding-top: 10px;
+	font-weight: lighter;
+}
+
+.h2{
+	font-size: 20px;
+	padding-top: 30px;
+}
+
+.h3{
+	font-size: 16px;
+	color: #BEBEBE;
+}
+
+.inputunm{
+	width: 100px;
+	color: #3A8EF5;
+	font-size: 40px;
+	border: 2px solid #E8E8E8;
+}
+
+.btn{
+	width: 100px;
+	background-color: #AFAFAF;
+	color: #ffffff;
+	border: 0px;
+	font-size: 14px;
+	padding: 5px;
+}
+
+.btn:hover{
+	width: 100px;
+	background-color: #3A8EF5;
+	color: #ffffff;
+	border: 0px;
+	font-size: 14px;
+	padding: 5px;
+}
+
+.Cheat{
+    display: none;
+}
+
+.keyin{
+	margin-top: 10px;
+	width: 120px;
+	background-color: #E4E4E4;
+	border: 0px;
+	height: 20px;
+	color: #3A8EF5;
+}

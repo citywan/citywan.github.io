@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>GuessNumber</title>
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/ build/cssreset/cssreset-min.css">
+	<link rel="stylesheet" type="text/css" href="guess2.css">
+	<style type="text/css">
+	    body{
+	    	font-family:calibri, "Microsoft JhengHei"; 
+	    	background-color: #F0F0F0;
+	    }
+    </style>
+</head>
+
+
+<body onload="Start()">
+    <div class="container">
+        <div align="center" width="85%">
+            <form name="CheckNum">
+                <h1 class="h1">Enter 4 Different Numbers</h1>
+                <br>
+                <input type="TEXT" name="chknum" size="4" maxlength="4" class="inputunm" align="center">
+                <p>
+                    <input type="BUTTON" name="start" value="GUESS" onclick="InCheck()" class="btn">
+                    <input type="BUTTON" name="restart" value="RESTART" onclick="ReStart()" class="btn">
+                    <br>
+                    <br>
+                    <div class="Cheat">
+                        <ul>
+                            <input type="BUTTON" value="cheat">
+                            <input type="BUTTON" name="defnum" value="9876">
+                        </ul>
+                    </div>
+                </p>
+            </form>
+        </div>
+
+        <div align="CENTER" width="85%">
+            <h2 class="h2">The Answers you key</h2>
+            <h3 class="h3">Eight times you can guess</h3>
+            <form name="KeyIn">
+                <input type="TEXT" name="keyin1" size="8" disabled class="keyin">
+                <input type="TEXT" name="keyin2" size="8" disabled class="keyin">              
+                <input type="TEXT" name="keyin3" size="8" disabled class="keyin">              
+                <input type="TEXT" name="keyin4" size="8" disabled class="keyin">          
+                <br>
+                <input type="TEXT" name="keyin5" size="8" disabled class="keyin">
+                <input type="TEXT" name="keyin6" size="8" disabled class="keyin">
+                <input type="TEXT" name="keyin7" size="8" disabled class="keyin">
+                <input type="TEXT" name="keyin8" size="8" disabled class="keyin">
+                <br>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+    var defchar = new startArray(4);
+    var chkchar = new startArray(4);
+    var count = 0;
+
+    function ReStart() {
+        document.CheckNum.chknum.value = "";
+        document.KeyIn.keyin1.value = "";
+        document.KeyIn.keyin2.value = "";
+        document.KeyIn.keyin3.value = "";
+        document.KeyIn.keyin4.value = "";
+        document.KeyIn.keyin5.value = "";
+        document.KeyIn.keyin6.value = "";
+        document.KeyIn.keyin7.value = "";
+        document.KeyIn.keyin8.value = "";
+        count = 0;
+        Start();
+    }
+
+    function Start() {
+        answer();
+        ToDefChar();
+        CompDefChar();
+    }
+
+    function answer() {
+        var num = 1234;
+        document.CheckNum.defnum.value = num;
+    }
+
+    function ToDefChar() {
+        num = document.CheckNum.defnum.value;
+        defchar[0] = num.substring(0, 1);
+        defchar[1] = num.substring(1, 2);
+        defchar[2] = num.substring(2, 3);
+        defchar[3] = num.substring(3, 4);
+    }
+
+    function ToChkChar() {
+        num = document.CheckNum.chknum.value;
+        chkchar[0] = num.substring(0, 1);
+        chkchar[1] = num.substring(1, 2);
+        chkchar[2] = num.substring(2, 3);
+        chkchar[3] = num.substring(3, 4);
+    }
+
+    function CompDefChar() {
+        var y = 0;
+        for (i = 0; i < 4; i++) {
+            for (j = 0; j < 4; j++) {
+                if (defchar[i] == defchar[j] && i != j) y = 1;
+            }
+        }
+        if (y == 1) Start();
+    }
+
+    function InCheck() {
+        var y = 0;
+        var a = 0;
+        var b = 0;
+        if (count == 8) {
+            alert("You Lose!");
+            return;
+        }
+        if (document.CheckNum.chknum.value.length < 4) {
+            document.CheckNum.chknum.value = "";
+            alert("Please enter 4 numbers");
+            return;
+        }
+        ToChkChar();
+        for (i = 0; i < 4; i++) {
+            for (j = 0; j < 4; j++) {
+                if (chkchar[i] == chkchar[j] && i != j) y = 1;
+            }
+        }
+        if (y == 1) {
+            document.CheckNum.chknum.value = "";
+            alert("Cannot Enter Same Numbers");
+            return;
+        }
+        if (document.CheckNum.chknum.value == document.CheckNum.defnum.value && count < 8) {
+            alert("You Got It!!");
+            count = 8;
+            return;
+        }
+        for (i = 0; i < 4; i++) {
+            for (j = 0; j < 4; j++) {
+                if (defchar[i] == chkchar[j]) {
+                    if (i == j) a++;
+                    else b++;
+                }
+            }
+        }
+        count++;
+        if (count == 1) document.KeyIn.keyin1.value = document.CheckNum.chknum.value + "    " + a + "A" + b + "B";
+        if (count == 2) document.KeyIn.keyin2.value = document.CheckNum.chknum.value + "    " + a + "A" + b + "B";
+        if (count == 3) document.KeyIn.keyin3.value = document.CheckNum.chknum.value + "    " + a + "A" + b + "B";
+        if (count == 4) document.KeyIn.keyin4.value = document.CheckNum.chknum.value + "    " + a + "A" + b + "B";
+        if (count == 5) document.KeyIn.keyin5.value = document.CheckNum.chknum.value + "    " + a + "A" + b + "B";
+        if (count == 6) document.KeyIn.keyin6.value = document.CheckNum.chknum.value + "    " + a + "A" + b + "B";
+        if (count == 7) document.KeyIn.keyin7.value = document.CheckNum.chknum.value + "    " + a + "A" + b + "B";
+        if (count == 8) document.KeyIn.keyin8.value = document.CheckNum.chknum.value + "    " + a + "A" + b + "B"; {
+            document.KeyIn.keyin10.value = document.CheckNum.chknum.value + "    " + a + "A" + b + "B";
+            alert("Please Restart");
+            return;
+        }
+        document.CheckNum.chknum.value = "";
+    }
+
+    function startArray(x) {
+        this.length = x;
+        for (var i = 0; i < x; i++) this[i] = 0;
+    }
+    </script>
+
+
+
+
+</body>
+
+</html>
