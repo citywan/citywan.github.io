@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+        "http://www.w3.org/TR/html4/frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Practice MediaQuery</title>
+<meta name="description" content="User Experience,User Experience" />
+<meta http-equiv="Content-Language" content="zh-tw" />
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+
+<style type="text/css">
+
+@media (max-width: 480px){
+	body{ background-color:#E74B4E;	}
+}
+
+@media (max-width: 767px) {
+	body{ background-color:#27AD79;	}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	body{ background-color:#008cf7;	}
+}
+
+@media (min-width: 980px) {
+	body{ background-color:#953FA8;	}
+}
+
+@media (min-width: 1200px){
+	body{ background-color:#E2C21C;	}
+}
+
+</style>
+
+<script type="text/javascript" src="css3-mediaqueries.js"></script>
+
+</head>
+<body>
+	<h1>Practice MediaQuery</h1>
+	<p>寬度小於 480 : 紅色</p>
+	<p>寬度超過 480 : 綠色</p>
+	<p>寬度超過 768  : 藍色</p>
+	<p>寬度超過 980  : 紫色</p>
+	<p>寬度超過 1200 : 黃色</p>
+	
+</body>
+</html>
